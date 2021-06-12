@@ -20,9 +20,12 @@ func count_compress(input string) []rune {
 
 			count++
 		}
-		countStr := strconv.Itoa(count)
+
 		runarry = append(runarry, runarry[i])
-		runarry = append(runarry, []rune(countStr)...)
+		if count > 1 {
+			countStr := strconv.Itoa(count)
+			runarry = append(runarry, []rune(countStr)...)
+		}
 
 		i = j - 1
 	}

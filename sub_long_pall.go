@@ -21,6 +21,7 @@ func isPallindrome(in string) bool {
 	return in == reverse(in)
 }
 
+// using runes to reverse string to account for non-ascii characters
 func reverse(input string) string {
 	runes := []rune(input)
 	length := len(runes) - 1

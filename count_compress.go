@@ -5,30 +5,39 @@ import (
 )
 
 func count_compress(input string) []rune {
-	var count, i, j int
 	runarry := []rune(input)
 	length := len(runarry)
 
-	for i = 0; i < length; i++ {
-		count = 1
+	for i := 0; i < length; {
 
-		for j = i + 1; j < length; j++ {
+		// Count characters
+		count := counter(runarry, i, length)
 
-			if runarry[i] != runarry[j] {
-				break
-			}
-
-			count++
-		}
-
+		// Append character & count
 		runarry = append(runarry, runarry[i])
 		if count > 1 {
 			countStr := strconv.Itoa(count)
 			runarry = append(runarry, []rune(countStr)...)
 		}
 
-		i = j - 1
+		// Remove counted characters
+		runarry = runarry[count:]
+		length = length - count
 	}
 
-	return runarry[i:]
+	return runarry
+}
+
+func counter(runarry []rune, i, length int) int {
+	count := 1
+	for j := 1; j < length; j++ {
+
+		if runarry[i] != runarry[j] {
+			break
+		}
+
+		count++
+	}
+
+	return count
 }

@@ -9,3 +9,10 @@
 1. Compresses an array by counting all subsequent letters
 2. Removes counted elements from array
 3. Mutates existing array to conserve space
+
+## match_count
+1. Matches substrings in a substring
+2. States if test cases pass or not on the basis of count of matched sub strings
+
+## concat_delim
+Concatinates list of strings into a single string on the bases of provided delimeter

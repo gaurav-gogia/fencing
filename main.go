@@ -15,4 +15,10 @@ func main() {
 	compressed := count_compress(input)
 	fmt.Println("Compressed Array: ")
 	fmt.Println(string(compressed))
+
+	fmt.Println()
+	match_count()
+
+	fmt.Println()
+	concat_delim()
 }
